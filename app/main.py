@@ -26,19 +26,19 @@ def shop_trip() -> None:
                     product_cart=customer["product_cart"]
                 ), 2)
                 shop["cost_trip"] = cost_trip
-                print(f"{customer["name"]}'s"
-                      f" trip to the {shop["name"]} costs {cost_trip}")
+                print(f"{customer['name']}'s"
+                      f" trip to the {shop['name']} costs {cost_trip}")
                 trip_dict[shop["name"]] = cost_trip
             key_min_value = min(trip_dict, key=lambda k: trip_dict[k])
             if customer["money"] < trip_dict[key_min_value]:
                 print(
-                    f"{customer["name"]} "
+                    f"{customer['name']} "
                     f"doesn't have enough money to make a purchase in any shop"
                 )
                 break
-            print(f"{customer["name"]} rides to {key_min_value}\n")
+            print(f"{customer['name']} rides to {key_min_value}\n")
             print("Date: 04/01/2021 12:33:41")
-            print(f"Thanks, {customer["name"]}, for your purchase!")
+            print(f"Thanks, {customer['name']}, for your purchase!")
             print("You have bought:")
             sum_all_product = 0
             for shop in python_dict["shops"]:
@@ -49,12 +49,12 @@ def shop_trip() -> None:
                             2)
                         if float(sum_product) == int(sum_product):
                             sum_product = int(sum_product)
-                        print(f"{customer["product_cart"][i]} {i}s for "
+                        print(f"{customer['product_cart'][i]} {i}s for "
                               f"{sum_product} dollars")
                         sum_all_product += sum_product
                     rest_money = round(
                         customer["money"] - shop["cost_trip"], 2)
             print(f"Total cost is {sum_all_product} dollars")
             print("See you again!\n")
-            print(f"{customer["name"]} rides home")
-            print(f"{customer["name"]} now has {rest_money} dollars\n")
+            print(f"{customer['name']} rides home")
+            print(f"{customer['name']} now has {rest_money} dollars\n")

@@ -3,12 +3,6 @@ from dataclasses import dataclass
 
 @dataclass
 class Shop:
-    name: str
-    location: list
-    products: dict
-    milk: int | float
-    bread: int | float
-    butter: int | float
 
     @staticmethod
     def cost_all_products(products: dict, product_cart: dict) -> float:

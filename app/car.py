@@ -3,9 +3,6 @@ from dataclasses import dataclass
 
 @dataclass
 class Car:
-    fuel_price: float
-    brand: str
-    fuel_consumption: float
 
     @staticmethod
     def calculate_fuel_cost(
