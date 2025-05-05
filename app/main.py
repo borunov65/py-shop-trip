@@ -11,7 +11,7 @@ def shop_trip() -> None:
     with (open("app/config.json") as file):
         python_dict = json.load(file)
         for customer in python_dict["customers"]:
-            print(f"{customer["name"]} has {customer["money"]} dollars")
+            print(f'{customer["name"]} has {customer["money"]} dollars')
             trip_dict = {}
             for shop in python_dict["shops"]:
                 cost_trip = round(Car.calculate_fuel_cost(
@@ -26,8 +26,8 @@ def shop_trip() -> None:
                     product_cart=customer["product_cart"]
                 ), 2)
                 shop["cost_trip"] = cost_trip
-                print(f"{customer["name"]}'s trip to the "
-                      f"{shop["name"]} costs {cost_trip}")
+                print(f"{customer["name"]}'s"
+                      f" trip to the {shop["name"]} costs {cost_trip}")
                 trip_dict[shop["name"]] = cost_trip
             key_min_value = min(trip_dict, key=lambda k: trip_dict[k])
             if customer["money"] < trip_dict[key_min_value]:
@@ -42,7 +42,7 @@ def shop_trip() -> None:
             print("You have bought:")
             sum_all_product = 0
             for shop in python_dict["shops"]:
-                if key_min_value in shop.values():
+                if shop["name"] == key_min_value:
                     for i in shop["products"]:
                         sum_product = round(
                             customer["product_cart"][i] * shop["products"][i],

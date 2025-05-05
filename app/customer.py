@@ -3,11 +3,11 @@ from dataclasses import dataclass
 
 @dataclass
 class Customer:
-    name = str
-    product_cart = {}
-    location = []
-    money = int | float
-    car = {}
+    name: str
+    product_cart: dict
+    location: list
+    money: int | float
+    car: dict
 
     @staticmethod
     def calculate_distance(location1: list, location2: list) -> float:
